@@ -1,0 +1,24 @@
+<div class="wrap">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <input #search formControlName="user" placeholder="Enter the username">
+        <span *ngIf="!searchForm.valid && searchForm.dirty" class="error">Field is required</span>
+        <!-- <p>{{search.className}}</p> -->
+        <button  class="submit" [disabled]="!searchForm.valid">Search</button>
+    </form>
+    <table *ngIf="users.length">
+        <tr>
+            <th>Avatar</th>
+            <th>Username</th>
+        </tr>
+        <tr *ngFor="let item of users | paginate: { itemsPerPage:5, currentPage: p }" 
+        >
+        <td><img [src]="item.avatar_url" alt="" class="avatar"></td>
+        <td>
+            <a  [routerLink]="['/users', item.login]">{{item.login}}</a>
+        </td>
+    </tr>
+</table>
+<pagination-controls *ngIf="users.length" (pageChange)="p =$event"></pagination-controls>
+</div>
+
+

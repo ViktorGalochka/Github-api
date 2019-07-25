@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0e232e;
+}
+
+.login span {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.avatar {
+    width: 400px;
+}
+
+.avatar, .id, .repos {
+    margin-top: 20px;
+}

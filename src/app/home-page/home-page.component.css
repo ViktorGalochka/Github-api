@@ -1,0 +1,79 @@
+.wrap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover {
+color: #5c5b5b;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    outline: 0;
+    text-align: center;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    transition: 0.3s all;
+}
+
+input:active, input:focus {
+    border-color: #0e232e;
+}
+
+input.ng-invalid.ng-dirty {
+    border: 2px solid #ff0000;
+}
+
+.error {
+    position: absolute;
+    color: #ff0000;
+}
+
+.submit {
+    display: block;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: #0e232e;
+    cursor: pointer;
+    color: #fff;
+}
+
+table {
+    margin-top: 20px;
+}
+
+table, tr, td, th {
+    border: 1px solid #000;
+}
+
+th {
+    font-weight: bold;
+}
+
+td,th {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.avatar {
+    width: 100px;
+}
+
+pagination-controls {
+    margin-top: 20px;
+}
