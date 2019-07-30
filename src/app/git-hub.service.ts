@@ -11,12 +11,18 @@ export class GitHubService {
     this.users = [];
   }
   
-  searchUser(q) {
+    searchUser(q) {
     this.users.splice(0, 30);
-    this.http.get(`https://api.github.com/search/users?q=${q}`).subscribe((data:any) => {
-    for(let item of data.items) {
-      this.users.push(item);
-    }
+    let obs1 = this.http.get(`https://api.github.com/search/users?q=${q}`);
+    obs1.subscribe((data:any) => {
+      console.log(data);
+      let p = data.total_count;
+      this.http.get(`https://api.github.com/search/users?q=${q}&per_page=${p}`).subscribe((data2:any) => {
+      console.log(data2);
+      for(let item of data2.items) {
+        this.users.push(item);
+      }
+    });
   });
 }
 getUserById(login) {
